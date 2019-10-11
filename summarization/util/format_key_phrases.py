@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 
 def format_key_phrases(key_phrases_string):
-    temp_file = '/tmp/' + datetime.timestamp(datetime.now())
+    temp_file = 'C:\\Users\\publi\\Downloads\\test\\' + str(datetime.timestamp(datetime.now()))
 
     with open(temp_file, 'w') as file:
         file.write(key_phrases_string)

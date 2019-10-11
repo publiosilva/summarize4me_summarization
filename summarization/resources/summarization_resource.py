@@ -22,20 +22,5 @@ class SummarizationResource(Resource):
             summary = SummaryGenerator(full_text, key_phrases).generate()
 
             return {'summary': summary}
-        except Exception as e:
-            print(e)
+        except:
             return {'message': 'Error in summarizing'}, 400
-
-    class FileToUpload:
-        def __init__(self, file):
-            self.file = file
-
-        def save(self):
-            try:
-                filename = datetime.timestamp(datetime.now())
-                file_path = path.join('/uploads', filename, '.txt')
-                self.file.save(file_path)
-
-                return file_path
-            except:
-                raise Exception('Error saving file')

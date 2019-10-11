@@ -22,7 +22,7 @@ class SummaryGenerator:
 
         for ps in self.ponderated_sentences:
             if ps['Weight'] >= minimum_weight_by_sentence:
-                summary.append(ps['Text'])
+                summary.append({ 'text': ps['Text'], 'weight': ps['Weight'] })
 
         return summary
 
